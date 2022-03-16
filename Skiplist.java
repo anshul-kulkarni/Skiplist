@@ -1,7 +1,3 @@
-//Name: Anshul Kulkarni
-//MIS: 111903139
-//TY Comp Div2
-
 import java.util.*;
 import java.io.*;
 
@@ -25,7 +21,7 @@ public class Skiplist {
         head.next = tail;
         tail.prev = head;
     }
-    int search(int d) {
+    public int search(int d) {
         Node n = head;
         if ((d == n.key) || (d == n.next.key)) {
             return 1;
@@ -41,7 +37,7 @@ public class Skiplist {
         }
         return 0;
     }
-    void traverse() {
+    public void traverse() {
         int h = height;
         Node p = head;
         while (p.below != null) {
@@ -59,7 +55,7 @@ public class Skiplist {
             System.out.println();
         }
     }
-    void insert(int d) {
+    public void insert(int d) {
         if (search(d) == 1) {
             return;
         }
@@ -76,7 +72,7 @@ public class Skiplist {
             height++;
         }
     }
-    void add_empty_level() {
+    public void add_empty_level() {
         Node new_head = new Node(NEG_INFINITY);
         Node new_tail = new Node(POS_INFINITY);
         new_head.next = new_tail;
@@ -88,7 +84,7 @@ public class Skiplist {
         head = new_head;
         tail = new_tail;
     }
-    void add_level_wise(int d, int current_height) {
+    public void add_level_wise(int d, int current_height) {
         int h = height;
         Node p = head;
         while (current_height < h) {
@@ -124,12 +120,13 @@ public class Skiplist {
                 h.println(random.nextInt(100000));
             }
             h.close();
-        } catch (IOException e) {
+        } 
+	catch (IOException e) {
             System.out.println("Error occured");
             e.printStackTrace();
         }
     }
-    void insert_from_file() {
+    public void insert_from_file() {
         try {
             File f = new File("test.txt");
             Scanner s = new Scanner(f);
@@ -138,19 +135,20 @@ public class Skiplist {
                 insert(d);
             }
             s.close();
-        } catch (IOException e) {
+        } 
+	catch (IOException e) {
             System.out.println("Error occured");
             e.printStackTrace();
         }
     }
-    int search_print(int d) {
+    public int search_print(int d) {
         Node p = head;
         if (d == p.key) {
             System.out.println("Height: " + (height - 1));
             System.out.println("No comparisons");
             return 1;
         }
-        if (d == p.next.key) {
+	else if (d == p.next.key) {
             System.out.println("Height: " + (height - 1));
             System.out.println("Comparisons: 1");
             return 1;
@@ -171,14 +169,15 @@ public class Skiplist {
             }
             if (count == 0) {
                 System.out.println("No comparisons");
-            } else {
+            } 
+	    else {
                 System.out.println("\nComparisons: " + count);
             }
             h--;
         }
         return 0;
     }
-    void delete_node(int d) {
+    public void delete_node(int d) {
         if (search(d) == 0) {
             return;
         }
@@ -201,7 +200,7 @@ public class Skiplist {
             }
         }
     }
-    void check_level() {
+    public void check_level() {
         Node p = head.below;
         int count = 0;
         while (p != null) {
@@ -243,7 +242,8 @@ public class Skiplist {
         if (t.search(d) == 0) {
             t.search_print(d);
             System.out.println(d + " not found");
-        } else {
+        } 
+	else {
             t.search_print(d);
             System.out.println(d + " found");
         }
