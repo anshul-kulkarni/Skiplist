@@ -122,7 +122,7 @@ public class Skiplist {
             h.close();
         } 
 	catch (IOException e) {
-            System.out.println("Error occured");
+            System.out.println("An error occured");
             e.printStackTrace();
         }
     }
@@ -137,7 +137,7 @@ public class Skiplist {
             s.close();
         } 
 	catch (IOException e) {
-            System.out.println("Error occured");
+            System.out.println("An error occured");
             e.printStackTrace();
         }
     }
