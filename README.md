@@ -10,6 +10,10 @@ This is a Java implementation of the Data Structure - Skiplist
 - This code first creates a file of 1000 random numbers. The file is then read and one by one all numbers are inserted in the skiplist.
 - It supports searching of a key, deletion of a node and traverse the list.
 
+# Current issues:
+- The output is not displayed in a pretty manner since there are a lot of numbers involved.
+- Since 1000 random numbers are being generated, not always there will be all numbers distinct hence there are < 1000 numbers in height = 0.
+
 # Compile the code:
 ```
 javac Skiplist.java
