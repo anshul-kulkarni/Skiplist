@@ -1,6 +1,6 @@
 # Skiplist
 
-This is a Java implementation of the Data Structure - Skiplist
+This is a Java implementation of the Data Structure - Skiplist.
 
 # Node:
 - int key : stores the numeric value of the node.
