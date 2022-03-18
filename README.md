@@ -14,6 +14,16 @@ This is a Java implementation of the Data Structure - Skiplist
 - The output is not displayed in a pretty manner since there are a lot of numbers involved.
 - Since 1000 random numbers are being generated, not always there will be all numbers distinct hence there are < 1000 numbers in height = 0.
 
+# Clone the repository:
+```
+git clone https://github.com/anshul-kulkarni/Skiplist.git
+```
+
+# Move to the folder:
+```
+cd Skiplist
+```
+
 # Compile the code:
 ```
 javac Skiplist.java
