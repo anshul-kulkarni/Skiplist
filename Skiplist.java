@@ -187,14 +187,18 @@ public class Skiplist {
             Node q = p;
             while (d >= q.key) {
                 if (d == q.key) {
-                    Node a = q.above;
-                    Node b = q.below;
-                    Node c = q.prev;
-                    Node e = q.next;
-                    c.next = e;
-                    e.prev = c;
-                    a = null;
-                    b = null;
+                    Node r = null;
+		    while (q != null) {
+		        (q.next).prev = q.prev;
+			(q.prev).next = q.next;
+			if (r != null) {
+			    r.below = null;
+			    q.above = null;
+			}
+			r = q;
+			q = q.below;
+		    }
+		    return;
                 }
                 q = q.next;
             }
